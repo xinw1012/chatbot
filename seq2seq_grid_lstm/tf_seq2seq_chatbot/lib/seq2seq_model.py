@@ -26,6 +26,7 @@ from six.moves import xrange  # pylint: disable=redefined-builtin
 import tensorflow as tf
 
 from tensorflow.models.rnn.translate import data_utils
+from grid_rnn_cell import Grid2LSTMCell
 
 
 class Seq2SeqModel(object):
@@ -98,7 +99,9 @@ class Seq2SeqModel(object):
     # Create the internal multi-layer cell for our RNN.
     single_cell = tf.nn.rnn_cell.GRUCell(size)
     if use_lstm:
-      single_cell = tf.nn.rnn_cell.BasicLSTMCell(size)
+      #single_cell = tf.nn.rnn_cell.BasicLSTMCell(size)
+      single_cell = Grid2LSTMCell(size)
+      print 'using 2d grid lstm'
     cell = single_cell
     if num_layers > 1:
       cell = tf.nn.rnn_cell.MultiRNNCell([single_cell] * num_layers)
