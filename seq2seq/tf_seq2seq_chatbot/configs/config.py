@@ -1,7 +1,7 @@
 import tensorflow as tf
 
-TEST_DATASET_PATH = 'tf_seq2seq_chatbot/data/test/test_set.txt'
-SAVE_DATA_DIR = '/var/lib/tf_seq2seq_chatbot/'
+TEST_DATASET_PATH = '/rscratch/xinw/chatbot/data/chat_test.in'
+SAVE_DATA_DIR = '/rscratch/xinw/chatbot/'
 
 tf.app.flags.DEFINE_string('data_dir', SAVE_DATA_DIR + 'data', 'Data directory')
 tf.app.flags.DEFINE_string('model_dir', SAVE_DATA_DIR + 'nn_models', 'Train directory')
