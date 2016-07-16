@@ -26,7 +26,7 @@ from six.moves import xrange  # pylint: disable=redefined-builtin
 import tensorflow as tf
 
 from tensorflow.models.rnn.translate import data_utils
-from grid_rnn_cell import Grid2LSTMCell
+from tf_seq2seq_chatbot.lib.grid_rnn_cell import Grid2LSTMCell
 
 
 class Seq2SeqModel(object):
